@@ -20,12 +20,14 @@ Magic is a Very-large-scale integration (VLSI) layout tool originally written by
 4. **For editing the layout:** you can edit the layout by entering commands in the command window called **tkcon 2.3 main**  
 5. Further tutorials for Magic can be found here http://opencircuitdesign.com/magic/tutorials/tut1.html.  
 ## CMOS NAND GATE:  
-The below figure shows a 2-input Complementary MOS NAND gate. It consists of two series NMOS transistors between Y and Ground and two parallel PMOS transistors between Y and VDD.  
+The below figure shows a 2-input Complementary MOS NAND gate. It consists of two series NMOS transistors between Y and Ground and two parallel PMOS transistors between Y and VDD.  ![Screenshot_2021-05-03 nand gate cmos layout - Google Search](https://user-images.githubusercontent.com/81563886/116912851-315ec900-ac62-11eb-8b7c-44d593d8804a.png)   
+
 If either input A or B is logic 0, at least one of the NMOS transistors will be OFF, breaking the path from Y to Ground. But at least one of the pMOS transistors will be ON, creating a path from Y to VDD.  
  Hence, the output Y will be high. If both inputs are high, both of the nMOS transistors will be ON and both of the pMOS transistors will be OFF. Hence, the output will be logic low.  
  # Designing a CMOS NAND GATE on magic VLSI layout tool:  
  Below is the picture of the nandgate I designed:  
  ![alt text](https://github.com/qurratulainalam/cmos-nand-gate-on-magic-VLSI/blob/master/nand%20gate%20picture.png)  
+
  # Testing NAND GATE with IRSIM:  
  After the completion of the drawing in Magic we basically need to extract the code of the drawing to test and see if we are getting the requried results and if the gate is working properly or not. This code includes the values of parasitic capacitors appear in the metal connections of the transistors, width to length ratios of the transistors and so on.This extraction can be done easily by **extract all** command. Then a file which has an extension of **.ext** will be saved to the common direction. However this **.ext** file is not usable for us, therefore we need to use **ext2sim** command to obtain the code of the magic layout design.THhe following file will be in **.sim**  extension and it can be viewed by **text editor** in linux.lets see what IRSIM really is :  
  ## IRSIM:  
